@@ -12,12 +12,12 @@ spec:
         - containerPort: 80
       env:
         - name: DB_url
-          valumeFrom:
+          valueFrom:
             configMapKeyRef:
               name: myconfigmap
               key: DB_url
         - name: IP_ADDRESS
-          valumeFrom:
+          valueFrom:
             configMapKeyRef:
               name: myconfigmap
               key: IP_ADDRESS
