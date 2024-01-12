@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: pod
+metadata:
+  name: nginx-pod
+  labels:
+    env: production
+spec:
+  containers:
+    - name: nginx-pod
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+      env:
+        - name: DB_url
+          valumeFrom:
+            configMapKeyRef:
+              name: myconfigmap
+              key: DB_url
+        - name: IP_ADDRESS
+          valumeFrom:
+            configMapKeyRef:
+              name: myconfigmap
+              key: IP_ADDRESS
