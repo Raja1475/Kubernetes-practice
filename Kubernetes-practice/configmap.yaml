@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: myconfigmap
 data:
-  DB_url: https:8080/db.com
+  DB_url: https://8080/db.com
   IP_ADDRESS: 192.80.42.168
