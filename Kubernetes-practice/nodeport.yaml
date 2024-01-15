@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    env: testing
+    type: app
+spec:
+  containers:
+    - name: nginx
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeport
+spec:
+  type: NodePort
+  selector:
+    env: testing
+    type: app
+  ports:
+    - protocol: TCP
+      port: 80
+      targertPort: 80
+      nodePort: 30080
