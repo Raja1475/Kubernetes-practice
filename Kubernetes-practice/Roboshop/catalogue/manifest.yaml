@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: roboshop
   name: catalogue
   labels:
     tier: app
@@ -30,6 +31,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  namespace: roboshop
   name: catalogue
 spec:  
   selector:
@@ -45,6 +47,7 @@ spec:
 apiVersion: v1
 kind: ConfigMap
 metadata:
+  namespace: roboshop
   name: catalogue
 data:
   MONGO: "true"
