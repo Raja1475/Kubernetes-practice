@@ -5,8 +5,9 @@ metadata:
 spec:
   replicas: 1
   selector:
-    tier: db
-    app: mongo
+    matchLabels:
+      tier: db
+      app: mongo
   template:
     metadata:
       labels:
