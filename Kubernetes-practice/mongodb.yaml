@@ -36,4 +36,5 @@ spec:
               name: mongo-volume
       volumes:
         - name: mongo-volume
-          emptyDir: {}
+          hostPath:
+            path: /data
