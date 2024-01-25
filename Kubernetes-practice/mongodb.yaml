@@ -24,3 +24,9 @@ spec:
               value: raja
             - name: MONGO_INITDB_ROOT_PASSWORD
               value: Raja@123
+          volumeMounts:
+            - mountPath: /data/db
+              name: mongo-volume
+      volumes:
+        - name: mongo-volume
+          emptyDir: {}
