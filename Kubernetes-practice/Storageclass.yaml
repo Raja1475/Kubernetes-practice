@@ -55,6 +55,6 @@ spec:
               name: nginx-html
       volumes:
         - name: nginx-html
-          PersistentVolumeClaim:
+          persistentVolumeClaim:
             claimName: ebs-dynamic-pvc
 
